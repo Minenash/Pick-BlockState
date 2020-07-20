@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Pick-BlockState",
-  "description": "Pick-block that copies the blockstate if the block isn't a block entity",
+  "description": "Pick-block now copies the blockstate if the block isn't a block entity",
   "authors": [
     "Minenash"
   ],
