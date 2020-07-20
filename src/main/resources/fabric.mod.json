@@ -3,7 +3,7 @@
   "id": "pickblockstate",
   "version": "${version}",
 
-  "name": "Pick Block State",
+  "name": "Pick-BlockState",
   "description": "Pick-block that copies the blockstate if the block isn't a block entity",
   "authors": [
     "Minenash"
