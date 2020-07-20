@@ -13,7 +13,7 @@
   },
 
   "license": "MIT",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/pickblockstate/icon.png",
 
   "environment": "client",
   "mixins": [
@@ -23,5 +23,8 @@
   "depends": {
     "fabric": "*",
     "minecraft": "1.16.x"
+  },
+  "custom": {
+    "modmenu:clientsideOnly": true
   }
 }
