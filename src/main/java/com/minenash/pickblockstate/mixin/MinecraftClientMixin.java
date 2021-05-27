@@ -8,7 +8,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -27,15 +27,15 @@ public class MinecraftClientMixin {
 	public ItemStack getPickStack(Block block, BlockView world, BlockPos pos, BlockState state) {
 		ItemStack stack = block.getPickStack(world, pos, state);
 
-		if (!player.abilities.creativeMode || !Screen.hasControlDown() || block.hasBlockEntity())
+		if (!player.getAbilities().creativeMode || !Screen.hasControlDown() || state.hasBlockEntity())
 			return stack;
 
-		CompoundTag compoundTag = stack.getOrCreateTag();
-		CompoundTag compoundTag3;
+		NbtCompound compoundTag = stack.getOrCreateTag();
+		NbtCompound compoundTag3;
 		if (compoundTag.contains("BlockStateTag", 10)) {
 			compoundTag3 = compoundTag.getCompound("BlockStateTag");
 		} else {
-			compoundTag3 = new CompoundTag();
+			compoundTag3 = new NbtCompound();
 			compoundTag.put("BlockStateTag", compoundTag3);
 		}
 
