@@ -30,7 +30,7 @@ public class MinecraftClientMixin {
 		if (!player.getAbilities().creativeMode || !Screen.hasControlDown() || state.hasBlockEntity())
 			return stack;
 
-		NbtCompound compoundTag = stack.getOrCreateTag();
+		NbtCompound compoundTag = stack.getOrCreateNbt();
 		NbtCompound compoundTag3;
 		if (compoundTag.contains("BlockStateTag", 10)) {
 			compoundTag3 = compoundTag.getCompound("BlockStateTag");
